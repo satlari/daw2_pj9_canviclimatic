@@ -1,1 +1,58 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+/* --- ESTILS GLOBALS DEL PROJECTE --- */
+
+/* Contenidors principals */
+.contingut-principal, .container-material {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto; /* Centrar el contingut a la pantalla */
+}
+
+/* Utilitats Flexbox (per alinear elements) */
+.flex-center { display: flex; justify-content: center; }
+.flex-wrap { display: flex; flex-wrap: wrap; }
+.flex-spacer { flex: 1 1 auto; }
+.flex-1 { flex: 1; }
+.align-center { align-items: center; }
+
+/* Espaiats */
+.gap-16 { gap: 16px; }
+.gap-20 { gap: 20px; }
+.ml-8 { margin-left: 8px; }
+.mt-16 { margin-top: 16px; }
+.mt-20 { margin-top: 20px; }
+.mb-24 { margin-bottom: 24px; }
+
+.card-gran {
+  max-width: 800px;
+  width: 100%;
+}
+
+.img-detall {
+  max-height: 400px;
+  object-fit: contain;
+  padding: 16px;
+  width: 100%;
+  background-color: #e0e0e0;
+  border: 1px solid #bdbdbd;
+}
+
+/* Tipografia */
+h2, .mat-h2 {
+  color: #4f861b;
+}
+
+/* --- ESTILS PER A LA LLISTA DE PAÏSOS --- */
+.list-item-custom {
+  border-bottom: 1px solid #eee;
+  transition: background-color 0.2s ease;
+}
+
+.list-item-custom:hover {
+  background-color: #f5f5f5;
+  cursor: pointer;
+}

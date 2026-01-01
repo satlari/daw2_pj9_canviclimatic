@@ -1,0 +1,23 @@
+<div class="contingut-principal">
+  <a mat-stroked-button routerLink="/llista">
+    <mat-icon>arrow_back</mat-icon>
+    Tornar a la llista
+  </a>
+
+  <mat-card *ngIf="dada" class="mt-20">
+    <mat-card-header>
+      <mat-card-title>{{ dada.pais | uppercase }}</mat-card-title>
+      <mat-card-subtitle>{{ dada.continent }} - {{ dada.anyDada }}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image [src]="dada.imatgeUrl" [alt]="'Imatge de ' + dada.pais" class="img-detall">
+    <mat-card-content>
+      <h2>Detalls de les emissions</h2>
+      <p class="text-descripcio">{{ dada.descripcio }}</p>
+      <p><strong>Emissions de CO2 ({{dada.anyDada}}):</strong> {{ dada.emissionsCo2 }} milions de tones</p>
+    </mat-card-content>
+  </mat-card>
+
+  <div *ngIf="!dada">
+    <h2>No s'ha trobat la dada sol·licitada.</h2>
+  </div>
+</div>

@@ -145,7 +145,7 @@ export class ClimaService {
    * Retorna totes les dades climàtiques.
    * @returns Un array de DadaClimatica.
    */
-  getDades(): DadaClimatica[] {
+  obtenirDades(): DadaClimatica[] {
     return this.dades;
   }
 
@@ -154,7 +154,7 @@ export class ClimaService {
    * @param id - L'ID de la dada a cercar.
    * @returns La DadaClimatica corresponent o undefined si no es troba.
    */
-  getDadaPerId(id: number): DadaClimatica | undefined {
+  obtenirDadaPerId(id: number): DadaClimatica | undefined {
     return this.dades.find(d => d.id === id);
   }
 }

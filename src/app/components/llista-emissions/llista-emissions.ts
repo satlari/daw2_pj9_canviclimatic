@@ -46,7 +46,7 @@ export class LlistaEmissions implements OnInit {
   constructor(private climaService: ClimaService) {}
 
   ngOnInit(): void {
-    const dades = this.climaService.getDades();
+    const dades = this.climaService.obtenirDades();
     this.llistaDades = dades;
 
     // Obtenim la llista de continents únics per al desplegable del filtre

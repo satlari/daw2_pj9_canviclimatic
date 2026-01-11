@@ -32,7 +32,7 @@ export class DetallEmissio implements OnInit {
     const id = this.route.snapshot.paramMap.get('id');
     if (id) {
       // Cerquem la dada amb el servei
-      this.dada = this.climaService.getDadaPerId(+id);
+      this.dada = this.climaService.obtenirDadaPerId(+id);
     }
   }
 }

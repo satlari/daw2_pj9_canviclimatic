@@ -17,31 +17,31 @@ export class FiltrePipe implements PipeTransform {
   }
 
   transform(
-    items: DadaClimatica[],
+    elements: DadaClimatica[],
     filtrePais: string,
     filtreContinent: string
   ): DadaClimatica[] {
-    if (!items) {
+    if (!elements) {
       return [];
     }
 
-    let itemsFiltrats = items;
+    let elementsFiltrats = elements;
     const filtrePaisNormalitzat = this.normalitzarText(filtrePais);
 
     // 1. Filtrar per país (si s'ha introduït text)
     if (filtrePaisNormalitzat) {
-      itemsFiltrats = itemsFiltrats.filter((item) =>
-        this.normalitzarText(item.pais).includes(filtrePaisNormalitzat)
+      elementsFiltrats = elementsFiltrats.filter((element) =>
+        this.normalitzarText(element.pais).includes(filtrePaisNormalitzat)
       );
     }
 
     // 2. Filtrar per continent (si s'ha seleccionat un diferent de 'Tots')
     if (filtreContinent && filtreContinent !== 'Tots') {
-      itemsFiltrats = itemsFiltrats.filter(
-        (item) => item.continent === filtreContinent
+      elementsFiltrats = elementsFiltrats.filter(
+        (element) => element.continent === filtreContinent
       );
     }
 
-    return itemsFiltrats;
+    return elementsFiltrats;
   }
 }

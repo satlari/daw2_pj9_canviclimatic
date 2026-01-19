@@ -17,6 +17,7 @@ import { ClimaService } from '../../services/clima.service';
 import { DadaClimatica } from '../../models/dada-climatica';
 import { FiltrePipe } from '../../pipes/filtre.pipe'; // Importem el Pipe
 import { RetallarTextPipe } from '../../pipes/retallar-text.pipe';
+import { trigger, transition, style, animate, query, stagger } from '@angular/animations';
 
 @Component({
   selector: 'app-llista-emissions',
@@ -34,6 +35,18 @@ import { RetallarTextPipe } from '../../pipes/retallar-text.pipe';
     MatIconModule
   ],
   templateUrl: './llista-emissions.html',
+  animations: [
+    trigger('listAnimation', [
+      transition('* <=> *', [
+        query(':enter', [
+          style({ opacity: 0, transform: 'translateY(-20px)' }),
+          stagger('100ms', [
+            animate('400ms ease-out', style({ opacity: 1, transform: 'none' }))
+          ])
+        ], { optional: true })
+      ])
+    ])
+  ]
 })
 export class LlistaEmissions implements OnInit {
   llistaDades: DadaClimatica[] = [];

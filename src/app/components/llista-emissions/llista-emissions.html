@@ -19,7 +19,7 @@
   </div>
 
   <!-- Llista de targetes -->
-  <mat-list role="list">
+  <mat-list role="list" [@listAnimation]="llistaDades.length">
     <!-- Bucle per mostrar cada dada amb el pipe de filtre aplicat -->
     <mat-list-item 
       *ngFor="let dada of llistaDades | filtre:filtrePais:filtreContinent" 

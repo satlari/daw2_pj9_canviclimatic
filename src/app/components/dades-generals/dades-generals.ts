@@ -9,6 +9,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
+import { trigger, transition, style, animate } from '@angular/animations';
 
 @Component({
   selector: 'app-dades-generals',
@@ -19,7 +20,16 @@ import { MatDividerModule } from '@angular/material/divider';
     MatIconModule, 
     MatDividerModule
   ],
-  templateUrl: './dades-generals.html'
+  templateUrl: './dades-generals.html',
+  animations: [
+    trigger('fadeIn', [
+      transition(':enter', [
+        style({ opacity: 0 }),
+        animate('600ms ease-in', style({ opacity: 1 }))
+      ])
+    ])
+  ],
+  host: { '[@fadeIn]': 'true' }
 })
 export class DadesGenerals {
 

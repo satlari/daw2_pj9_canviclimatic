@@ -1,6 +1,6 @@
 /*
  * Classe que representa el model de dades d'una emissió climàtica
- * @author [El teu nom]
+ * @author [marc]
  * @version 1.0
  */
 export class DadaClimatica {
